@@ -67,33 +67,33 @@ Masalah riset yang layak harus memenuhi 5 kriteria:
 PROBLEM STATEMENT BUILDER
 
 Domain & Konteks
-  Domain   : ____________________
-  Konteks  : ____________________
+  Domain   : Sistem Informasi / Teknologi Informasi
+  Konteks  : Penggunaan teknologi informasi pada UMKM di Indonesia
 
 System Context
-  Input       : ____________________
-  Process     : ____________________
-  Output      : ____________________
-  Outcome     : ____________________
-  Constraints : ____________________
-  Stakeholders: ____________________
+  Input       : Data operasional UMKM dan penggunaan teknologi
+  Process     : Pemanfaatan teknologi informasi dalam aktivitas bisnis
+  Output      : Informasi bisnis seperti laporan dan transaksi
+  Outcome     : Kinerja UMKM (efisiensi, produktivitas, pendapatan)
+  Constraints : Keterbatasan SDM, biaya, dan pemahaman teknologi
+  Stakeholders: Pemilik UMKM, karyawan, pelanggan
 
 Fenomena → Problem
-  Fenomena yang diamati             : ____________________
-  Gejala (symptom) yang terukur     : ____________________
-  Masalah yang didiagnosis          : ____________________
-  Masalah riset (researchable)      : ____________________
-  Variabel yang terukur             : ____________________
+  Fenomena yang diamati             : Meningkatnya penggunaan teknologi pada UMKM
+  Gejala (symptom) yang terukur     : Tidak semua UMKM mengalami peningkatan kinerja
+  Masalah yang didiagnosis          : Pemanfaatan teknologi belum optimal
+  Masalah riset (researchable)      : Belum jelas pengaruh tingkat penggunaan TI terhadap kinerja UMKM
+  Variabel yang terukur             : Tingkat penggunaan TI, kinerja UMKM
 
 Problem Quality Check
-  [ ] Clarity — Apakah satu orang membaca akan paham?
-  [ ] Measurability — Apakah ada metrik kuantitatif?
-  [ ] Relevance — Apakah penting untuk domain?
-  [ ] Testability — Apakah bisa gagal?
-  [ ] Impact — Apakah ada kontribusi jika terjawab?
+  [✔] Clarity — Apakah satu orang membaca akan paham?
+  [✔] Measurability — Apakah ada metrik kuantitatif?
+  [✔] Relevance — Apakah penting untuk domain?
+  [✔] Testability — Apakah bisa gagal?
+  [✔] Impact — Apakah ada kontribusi jika terjawab?
 
 Problem Statement (1 paragraf):
-  ____________________
+  Penggunaan teknologi informasi pada UMKM semakin meningkat, namun tidak semua pelaku usaha mengalami peningkatan kinerja yang signifikan. Hal ini menunjukkan adanya perbedaan dalam tingkat pemanfaatan teknologi yang digunakan. Oleh karena itu, diperlukan penelitian untuk menganalisis pengaruh tingkat penggunaan teknologi informasi terhadap kinerja UMKM secara terukur guna mengetahui sejauh mana teknologi dapat meningkatkan efisiensi dan produktivitas usaha.
 ```
 
 ---
@@ -102,17 +102,17 @@ Problem Statement (1 paragraf):
 
 Pilih satu topik di bidang TI yang diminati. Transformasikan melalui 5 tahap Problem Formation Model.
 
-**Topik awal:** ________________________________________
+**Topik awal:** Pengaruh penggunaan teknologi informasi terhadap kinerja UMKM
 
 | Tahap | Hasil |
 |-------|-------|
-| Reality | *Contoh: Aplikasi e-commerce sering ditinggalkan saat checkout* |
-| Observed Issue (Symptom) | *Contoh: Bounce rate checkout 68%* |
-| Diagnosed Problem (Root Cause) | |
-| Researchable Problem | |
-| Measurable Variable | |
+| Reality | Banyak UMKM mulai menggunakan teknologi informasi dalam operasional bisnis |
+| Observed Issue (Symptom) | Tidak semua UMKM mengalami peningkatan kinerja meskipun sudah menggunakan teknologi |
+| Diagnosed Problem (Root Cause) |Kurangnya pemahaman dan pemanfaatan teknologi informasi secara optimal |
+| Researchable Problem |Belum jelas bagaimana pengaruh tingkat penggunaan teknologi informasi terhadap kinerja UMKM secara terukur |
+| Measurable Variable |Tingkat penggunaan TI, kinerja UMKM (pendapatan, efisiensi, produktivitas) |
 
-**Apakah terjebak solution-first thinking?** [ ] Ya / [ ] Tidak
+**Apakah terjebak solution-first thinking?** [ ] Ya / [✔] Tidak
 > Jika ya, kembali ke tahap mana? ________________________
 
 ---
@@ -123,14 +123,15 @@ Gambarkan konteks sistem dari masalah riset di Latihan 1.
 
 | Komponen | Deskripsi |
 |----------|----------|
-| Input | *Contoh: Request HTTP dari browser pengguna* |
-| Process | |
-| Output | |
-| Outcome | |
-| Constraints | |
-| Stakeholders | |
+| Input | Data operasional UMKM, penggunaan aplikasi/teknologi |
+| Process |Pengolahan data dan aktivitas bisnis menggunakan teknologi informasi |
+| Output |Informasi bisnis (laporan, transaksi, data pelanggan) |
+| Outcome |Peningkatan kinerja UMKM (efisiensi, pendapatan) |
+| Constraints |Keterbatasan SDM, biaya, pemahaman teknologi |
+| Stakeholders |Pemilik UMKM, karyawan, pelanggan |
 
-**Komponen mana yang paling relevan dengan masalah riset?** _______________
+**Komponen mana yang paling relevan dengan masalah riset?**  
+Process (cara penggunaan teknologi informasi)
 
 ---
 
@@ -140,24 +141,24 @@ Evaluasi problem statement yang sudah dibuat menggunakan 5 kriteria.
 
 | Kriteria | Skor (1-5) | Justifikasi |
 |----------|-----------|-------------|
-| Clarity | *Contoh: 4 — cukup jelas tapi perlu spesifikasi dataset* | |
-| Measurability | | |
-| Relevance | | |
-| Testability | | |
-| Impact | | |
+| Clarity | 4 |Sudah jelas, tapi bisa lebih spesifik pada jenis UMKM |
+| Measurability | 5 |Ada variabel kuantitatif (kinerja, penggunaan TI) |
+| Relevance | 5 |Penting untuk perkembangan UMKM |
+| Testability | 5 |Bisa diuji dengan data |
+| Impact | 4 |Berdampak pada peningkatan bisnis UMKM |
 
-**Skor total:** _____ / 25
+**Skor total:** 23 / 25
 
 **Problem statement versi final (1 paragraf):**
-> ___________________________________________________
-> ___________________________________________________
+> Penggunaan teknologi informasi pada UMKM semakin meningkat, namun tidak semua pelaku usaha mengalami peningkatan kinerja yang signifikan. Hal ini menunjukkan adanya perbedaan dalam tingkat pemanfaatan teknologi yang digunakan. Oleh karena itu, diperlukan penelitian untuk menganalisis pengaruh tingkat penggunaan teknologi informasi terhadap kinerja UMKM secara terukur, guna mengetahui sejauh mana teknologi dapat meningkatkan efisiensi dan produktivitas usaha.
+> 
 
 ---
 
 ## Refleksi
 
-> Bandingkan "masalah" yang biasa ditemui saat coding (bug, error) dengan masalah riset. Apa perbedaan fundamental dalam cara mendefinisikan dan mendekati keduanya?
+Bandingkan "masalah" yang biasa ditemui saat coding (bug, error) dengan masalah riset. Apa perbedaan fundamental dalam cara mendefinisikan dan mendekati keduanya?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Masalah dalam coding biasanya bersifat teknis dan langsung terlihat seperti error atau bug yang harus segera diperbaiki. Sedangkan masalah riset lebih kompleks karena membutuhkan identifikasi akar masalah, pembuktian dengan data, serta perumusan yang sistematis agar dapat diuji secara ilmiah.
+> 
