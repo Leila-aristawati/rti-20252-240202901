@@ -68,22 +68,18 @@ Jika rantai ini tidak lengkap, RQ belum mature. Bi-directional: RQ yang tidak bi
 RQ-CONTRIBUTION-HYPOTHESIS
 
 Gap Statement  :Penelitian sebelumnya tentang adopsi teknologi pada UMKM (Puspitaningsih et al., 2022)
-  hanya dilakukan dengan sampel kecil (50 responden) dan hanya menemukan 2 dari 13
-  variabel yang signifikan, sehingga 50,8% variansi adopsi teknologi belum terjelas.
-  Belum ada penelitian yang secara komprehensif mengukur pengaruh literasi digital,
-  keterbatasan anggaran, dan dukungan infrastruktur secara bersamaan terhadap kinerja
-  UMKM di Kota Bandung dengan sampel yang lebih representatif.
+menggunakan pendekatan statistik SEM-PLS yang hanya menjelaskan hubungan antar variabel,namun belum mampu memprediksi kinerja UMKM secara akurat. Belum ada penelitian yang membandingkan kemampuan prediksi algoritma machine learning (Random Forest vs Logistic Regression) dalam memprediksi kinerja UMKM berdasarkan faktor-faktor adopsi teknologi digital di Kota Bandung.
+
 
 Research Question:
-  Tipe         : [ ] Comparison  [ ] Improvement  [✔ ] Exploratory
-  Formulasi    : Apakah literasi digital, keterbatasan anggaran, dan ketersediaan infrastruktur teknologi secara signifikan mempengaruhi kinerja UMKM di Kota Bandung, diukur menggunakan SEM-PLS pada sampel 150 responden?
-  Variabel IV  : 1. Literasi Digital (kemampuan penggunaan teknologi digital)
-  2. Keterbatasan Anggaran (kemampuan finansial adopsi teknologi)
-  3. Dukungan Infrastruktur (ketersediaan internet & perangkat)
-  Variabel DV  : Kinerja UMKM (efisiensi operasional produktivitas, pendapatan)
-  Metrik       : Path coefficient, nilai t-value (> 1,96), R² model SEM-PLS
-  Dataset      : Kuesioner primer dari 150 UMKM di Kota Bandung
-  Baseline     : Puspitaningsih et al. (2022) — SEM-PLS 50 responden UMKM Bandung. R² = 0,492, hanya 2 variabel signifikan dari 13
+  Tipe         : [✔] Comparison  [ ] Improvement  [ ] Exploratory
+  Formulasi    : Apakah Random Forest menghasilkan akurasi dan F1-Score yang lebih tinggi dibandingkan Logistic Regression dalam memprediksi kinerja UMKM berdasarkan faktor adopsi teknologi digital (literasi digital, keterbatasan anggaran, dan dukungan infrastruktur) di Kota Bandung?
+  Variabel IV  : Algoritma klasifikasi — Random Forest vs Logistic Regression
+  Variabel DV  : Akurasi prediksi kinerja UMKM
+  Metrik       : Accuracy, F1-Score, Precision, Recall
+  Dataset      : Data kuesioner primer dari 150 UMKM di Kota Bandung (fitur: literasi digital, keterbatasan anggaran, dukungan infrastruktur
+  label: kinerja UMKM — tinggi/rendah)
+  Baseline     : Logistic Regression (sebagai model klasifikasi dasar/sederhana)
 
 Quality Check RQ:
   [✔] Variabel spesifik
@@ -93,22 +89,15 @@ Quality Check RQ:
   [✔] Memerlukan eksperimen (bukan hanya survei literatur)
 
 Contribution Statement:
-  Apa yang baru diketahui : Penelitian ini akan menghasilkan model empiris yang lebih komprehensif tentang pengaruh hambatan adopsi teknologi (literasi digital, anggaran, infrastruktur) terhadap kinerja UMKM di Kota Bandung, dengan sampel 3x lebih besar dari penelitian baseline sehingga lebih representatif.
-  Jenis kontribusi        : [✔] Improvement  [✔] Comparison  [ ] Novel approach
-  Gap yang diisi          : Context Gap + Performance Gap — R² baseline hanya 49,2% dengan 13 variabel; penelitian ini memfokuskan 3 variabel hambatan utama yang paling relevan secara praktis bagi pelaku UMKM.
+  Apa yang baru diketahui : Penelitian ini akan menghasilkan bukti empiris algoritma mana (Random Forest atau Logistic Regression) yang lebih akurat dalam memprediksi kinerja UMKM berdasarkan faktor adopsi teknologi digital, sehingga dapat menjadi rekomendasi tools prediksi bagi pengambil kebijakan dan pelaku UMKM di Bandung.
+  Jenis kontribusi        : [ ] Improvement  [✔] Comparison  [ ] Novel approach
+  Gap yang diisi          : Method Gap — penelitian sebelumnya hanya menggunakan SEM-Method Gap — penelitian sebelumnya hanya menggunakan SEM-PLS untuk menjelaskan hubungan variabel, belum ada yang menggunakan machine learning untuk memprediksi kinerja UMKM berdasarkan faktor adopsi teknologi di Kota Bandung.
 
 Hypothesis Pair:
- H₀₁ : Literasi digital tidak berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung.
-  H₁₁ : Literasi digital berpengaruh signifikan positif terhadap kinerja UMKM di Kota Bandung.
-
-H₀₂ : Keterbatasan anggaran tidak berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung.
-  H₁₂ : Keterbatasan anggaran berpengaruh signifikan negatif terhadap kinerja UMKM di Kota Bandung.
-
-H₀₃ : Dukungan infrastruktur teknologi tidak berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung.
-  H₁₃ : Dukungan infrastruktur teknologi berpengaruh signifikan positif terhadap kinerja UMKM di Kota Bandung.
-
-Threshold              : α = 0,05 (t-value > 1,96)
-Justifikasi threshold  : Standar umum pada penelitian sosial dan bisnis dengan pendekatan SEM-PLS (Hair et al., 2017); konsisten dengan threshold yang digunakan pada baseline Puspitaningsih et al. (2022)
+  H₀ : Tidak ada perbedaan signifikan antara akurasi Random Forest dan Logistic Regression dalam memprediksi kinerja UMKM berdasarkan faktor adopsi teknologi digital di Kota Bandung.
+  H₁ : Random Forest menghasilkan akurasi dan F1-Score yang lebih tinggi secara signifikan dibandingkan Logistic Regression dalam memprediksi kinerja UMKM berdasarkan faktor adopsi teknologi digital di Kota Bandung.
+  Threshold : Akurasi ≥ 80% dan F1-Score lebih tinggi minimal 5% dibandingkan baseline Logistic Regression
+  Justifikasi threshold : Threshold akurasi 80% merupakan standar minimum yang umum digunakan pada penelitian klasifikasi di bidang bisnis dan sosial (Mustafa & Yaakub, 2018); selisih 5% F1-Score dianggap perbedaan yang praktis signifikan antar model.
 ```
 
 ---
@@ -117,25 +106,31 @@ Justifikasi threshold  : Standar umum pada penelitian sosial dan bisnis dengan p
 
 Gunakan gap yang ditemukan di WS-03. Transformasikan menjadi Research Question.
 
-**Gap dari WS-03:** Belum ada penelitian kuantitatif yang secara komprehensif mengukur pengaruh faktor-faktor hambatan adopsi teknologi (literasi digital, anggaran, infrastruktur) terhadap kinerja UMKM di Kota Bandung dengan sampel yang representatif. Penelitian sebelumnya (Puspitaningsih et al., 2022) hanya menggunakan 50 sampel dan menemukan bahwa lebih dari 50% variansi masih belum terjelas.
+**Gap dari WS-03:** Penelitian sebelumnya (Puspitaningsih et al., 2022) hanya menggunakan SEM-PLS untuk
+menjelaskan hubungan antar variabel adopsi teknologi pada UMKM, namun belum ada yang
+menggunakan pendekatan machine learning untuk memprediksi kinerja UMKM berdasarkan
+faktor-faktor tersebut. Ini adalah method gap yang membuka peluang perbandingan algoritma
+prediksi di konteks UMKM Kota Bandung.
 
 **RQ versi pertama (tulis bebas):**
-> Faktor apa saja yang mempengaruhi kinerja UMKM dalam adopsi teknologi digital di Kota Bandung?
+> Algoritma machine learning mana yang paling akurat untuk memprediksi kinerja UMKM
+berdasarkan faktor adopsi teknologi digital?
 
 **Evaluasi RQ:**
 
 | Komponen | Ada? | Isi |
 |----------|------|-----|
-| Metode spesifik |Ya|SEM-PLS |
-| Metrik terukur |Ya |Path coefficient, t-value, R² |
-| Baseline |Ya |Puspitaningsih et al. (2022) — 50 responden, R² = 0,492 |
-| Dataset/konteks |Ya |150 UMKM Kota Bandung, kuesioner primer |
+| Metode spesifik | Ya | Random Forest vs Logistic Regression |
+| Metrik terukur | Ya | Accuracy, F1-Score, Precision, Recall |
+| Baseline | Ya | Logistic Regression sebagai model klasifikasi dasar |
+| Dataset/konteks | Ya | 150 UMKM Kota Bandung, data kuesioner primer |
 
-**Tipe RQ:** [ ] Comparison / [ ] Improvement / [✔] Exploratory
+**Tipe RQ:** [✔] Comparison / [ ] Improvement / [ ] Exploratory
 
 **RQ versi revisi (setelah evaluasi):**
-> Apakah literasi digital, keterbatasan anggaran, dan dukungan infrastruktur teknologi secara signifikan mempengaruhi kinerja UMKM di Kota Bandung, diukur menggunakan SEM-PLS pada 150 responden?
-
+> Apakah Random Forest menghasilkan akurasi dan F1-Score yang lebih tinggi dibandingkan
+Logistic Regression dalam memprediksi kinerja UMKM berdasarkan faktor adopsi teknologi
+digital (literasi digital, keterbatasan anggaran, dukungan infrastruktur) di Kota Bandung?
 ---
 
 ## Latihan 2 — Hypothesis Pair
@@ -144,18 +139,17 @@ Rumuskan pasangan hipotesis dari RQ di Latihan 1.
 
 | Komponen | Isi |
 |----------|-----|
-| H₀₁ | Literasi digital tidak berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung |
-| H₁₁ | Literasi digital berpengaruh signifikan positif terhadap kinerja UMKM di Kota Bandung |
-| H₀₂ | Keterbatasan anggaran tidak berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung |
-| H₁₂ | Keterbatasan anggaran berpengaruh signifikan negatif terhadap kinerja UMKM di Kota Bandung |
-| H₀₃ | Dukungan infrastruktur tidak berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung |
-| H₁₃ | Dukungan infrastruktur berpengaruh signifikan positif terhadap kinerja UMKM di Kota Bandung |
-| Metrik | Path coefficient & t-value (SEM-PLS) |
-| Threshold | α = 0,05 (t-value > 1,96) |
-| Justifikasi threshold | Standar umum penelitian sosial/bisnis dengan SEM-PLS (Hair et al., 2017) |
+| H₀ | Tidak ada perbedaan signifikan antara akurasi Random Forest dan Logistic Regression dalam memprediksi kinerja UMKM berdasarkan faktor adopsi teknologi digital di Kota Bandung |
+| H₁ | Random Forest menghasilkan akurasi dan F1-Score lebih tinggi secara signifikan dibandingkan Logistic Regression dalam memprediksi kinerja UMKM berdasarkan faktor adopsi teknologi digital di Kota Bandung |
+| Metrik | Accuracy, F1-Score, Precision, Recall |
+| Threshold | Akurasi ≥ 80%; F1-Score Random Forest lebih tinggi minimal 5% dari Logistic Regression |
+| Justifikasi threshold | Standar minimum akurasi 80% umum digunakan pada penelitian klasifikasi di domain bisnis dan sosial |
 
 **Apakah hipotesis ini falsifiable?** [✔] Ya / [ ] Tidak
-> Bagaimana cara membuktikannya salah? Cara membuktikannya salah: Jika t-value < 1,96 dan p-value > 0,05 pada hasil SEM-PLS, maka H₁ ditolak dan H₀ tidak dapat ditolak — artinya variabel tersebut tidak terbukti berpengaruh signifikan terhadap kinerja UMKM.
+> Bagaimana cara membuktikannya salah? Cara membuktikannya salah: Jika akurasi Random Forest < 80% atau F1-Score Random Forest
+tidak lebih tinggi minimal 5% dari Logistic Regression, maka H₁ ditolak dan H₀ tidak
+dapat ditolak, artinya Random Forest tidak terbukti lebih unggul dari Logistic Regression
+untuk prediksi kinerja UMKM.
 
 ---
 
@@ -165,12 +159,12 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 | Tahap | Isi |
 |-------|-----|
-| RQ | Apakah literasi digital, keterbatasan anggaran, dan dukungan infrastruktur teknologi berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung? |
-| Variable (IV) | 1. Literasi Digital (X₁) — kemampuan menggunakan perangkat & aplikasi digital; 2. Keterbatasan Anggaran (X₂) — kemampuan finansial investasi teknologi; 3. Dukungan Infrastruktur (X₃) — ketersediaan internet & perangkat |
-| Variable (DV) | Kinerja UMKM (Y) — efisiensi operasional, produktivitas, pertumbuhan pendapatan |
-| Metric | Path coefficient (β), t-value, p-value, R² dari model SEM-PLS |
-| Data source | Kuesioner primer skala Likert 5 poin; 150 UMKM Kota Bandung (stratified random sampling berdasarkan klasifikasi mikro, kecil, menengah) |
-| Analysis method | SEM-PLS menggunakan SmartPLS 3.0; outer model (convergent & discriminant validity, composite reliability); inner model (R², path coefficient, bootstrapping) |
+| RQ | Apakah Random Forest menghasilkan akurasi lebih tinggi dari Logistic Regression dalam memprediksi kinerja UMKM berdasarkan faktor adopsi teknologi digital di Kota Bandung? |
+| Variable (IV) | Algoritma klasifikasi: Random Forest vs Logistic Regression |
+| Variable (DV) | Akurasi prediksi kinerja UMKM (label: kinerja tinggi / kinerja rendah) |
+| Metric | Accuracy, F1-Score, Precision, Recall — dihitung dari confusion matrix |
+| Data source | Kuesioner primer skala Likert 5 poin; 150 UMKM Kota Bandung; fitur input: literasi digital (X₁), keterbatasan anggaran (X₂), dukungan infrastruktur (X₃); label output: kinerja UMKM (Y) |
+| Analysis method | Python (scikit-learn): preprocessing → split data train/test (80:20) → training Random Forest & Logistic Regression → evaluasi dengan confusion matrix → bandingkan Accuracy & F1-Score |
 
 **Apakah rantai lengkap?** [✔] Ya / [ ] Tidak
 > Jika tidak, tahap mana yang perlu direvisi? ______________
@@ -183,4 +177,8 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 **Judul:** Faktor yang Mempengaruhi UMKM dalam Mengadopsi Komputasi Awan di Kota Bandung  
 **RQ yang diekstrak:** Faktor apa saja yang mempengaruhi UMKM di Kota Bandung dalam mengadopsi teknologi komputasi awan?  
-**Komponen yang hilang:** RQ paper ini tidak menyebutkan metrik secara eksplisit dalam pertanyaan penelitiannya, dan tidak ada baseline perbandingan yang jelas dinyatakan di RQ. Selain itu, RQ tidak menyebutkan ukuran sampel target maupun threshold signifikansi yang digunakan. Akibatnya, RQ terasa lebih seperti pertanyaan deskriptif daripada pertanyaan yang mengandung "cetak biru eksperimen" yang lengkap.
+**Komponen yang hilang:** RQ paper tersebut tidak menyebutkan metrik perbandingan secara eksplisit, tidak ada
+baseline model, dan tidak ada komponen prediksi. RQ hanya bersifat eksploratif
+(hubungan antar variabel) tanpa ada perbandingan metode. Penelitian ini mengisi gap
+tersebut dengan menambahkan komponen perbandingan algoritma machine learning sehingga
+RQ menjadi lebih testable dan menghasilkan rekomendasi yang lebih konkret.
