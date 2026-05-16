@@ -67,25 +67,28 @@ Jika variabel tidak bisa di-map ke komponen apapun → arsitektur perlu didesain
 ```
 SYSTEM-EXPERIMENT MAPPING
 
-Research Question: ____________________
+Research Question: Apakah literasi digital, keterbatasan anggaran, dan dukungan infrastruktur teknologi secara signifikan mempengaruhi kinerja UMKM di Kota Bandung, diukur menggunakan SEM-PLS pada 150 responden?
+
 
 Variable → Component Mapping:
 | Variabel | Tipe | Komponen Sistem | Cara Manipulasi/Pengukuran |
 |----------|------|-----------------|---------------------------|
-|          | IV   |                 |                           |
-|          | DV   |                 |                           |
-|          | CV   |                 |                           |
+| Literasi Digital       | IV   | Modul instrumen kuesioner (blok X₁)   | Skor rata-rata 5 item Likert; diubah per responden      |
+| Keterbatasan Anggaran  | IV   | Modul instrumen kuesioner (blok X₂)   | Skor rata-rata 4 item Likert; diubah per responden      |
+| Dukungan Infrastruktur | IV   | Modul instrumen kuesioner (blok X₃)   | Skor rata-rata 4 item Likert; diubah per responden      |
+| Kinerja UMKM           | DV   | Modul pengukuran output (blok Y)      | Path coefficient (β) & t-value dihasilkan SmartPLS 3.0  |
+| Ukuran Usaha           | CV   | Config filter responden               | Dikunci berdasarkan klasifikasi mikro/kecil/menengah     
 
 4 Prinsip Desain:
-  [ ] Traceability — Setiap komponen bisa ditelusuri ke variabel
-  [ ] Variable Isolation — IV bisa diubah tanpa mengubah CV
-  [ ] Measurement Integration — Pengukuran DV built-in
-  [ ] Reproducibility — Setup bisa direkonstruksi
+  [✔] Traceability — Setiap blok kuesioner (X₁, X₂, X₃, Y) bisa ditelusuri ke variabel
+  [✔] Variable Isolation — Setiap IV diukur pada blok terpisah; perubahan satu blok tidak mempengaruhi blok lain
+  [✔] Measurement Integration — SmartPLS otomatis menghasilkan path coefficient, t-value, dan R² sebagai output pengukuran DV
+  [✔] Reproducibility — Instrumen kuesioner dan konfigurasi SmartPLS terdokumentasi sehingga bisa direkonstruksi
 
 Experimental Setup:
-  Input data     : ____________________
-  Parameter      : ____________________
-  Output format  : ____________________
+  Input data     :Data kuesioner primer dari 150 UMKM Kota Bandung (format Excel/CSV)
+  Parameter      :Skala Likert 1–5, threshold t-value > 1,96 (α = 0,05),outer loading ≥ 0,708, AVE ≥ 0,5
+  Output format  : Path coefficient (β), t-value, R², AVE, composite reliability (dihasilkan SmartPLS 3.0, diekspor ke tabel hasil)
 ```
 
 ---
@@ -98,11 +101,13 @@ Gunakan RQ dan variabel dari WS-05. Petakan ke komponen sistem.
 
 | Variabel | Tipe | Komponen Sistem | Cara Manipulasi / Pengukuran |
 |----------|------|-----------------|---------------------------|
-| *Contoh: Jenis model* | *IV* | *Modul classifier (swap RF ↔ CNN)* | *Ganti config `model_type`* |
-| | DV | | |
-| | CV | | |
+| Literasi Digital | IV | Blok kuesioner X₁ (5 item Likert) | Skor diinput per responden; dianalisis sebagai konstruk laten di SmartPLS |
+| Keterbatasan Anggaran | IV | Blok kuesioner X₂ (4 item Likert) | Skor diinput per responden; dianalisis sebagai konstruk laten di SmartPLS |
+| Dukungan Infrastruktur | IV | Blok kuesioner X₃ (4 item Likert) | Skor diinput per responden; dianalisis sebagai konstruk laten di SmartPLS |
+| Kinerja UMKM | DV | Blok kuesioner Y + modul analisis SmartPLS | Path coefficient (β) & t-value dihitung otomatis oleh SmartPLS 3.0 |
+| Ukuran Usaha | CV | Config filter & stratifikasi sampling | Dikunci dengan stratified random sampling (mikro/kecil/menengah) |
 
-**Apakah semua variabel bisa di-map?** [ ] Ya / [ ] Tidak
+**Apakah semua variabel bisa di-map?** [✔] Ya / [ ] Tidak
 > Jika tidak, komponen apa yang perlu ditambahkan? _________
 
 ---
@@ -113,15 +118,17 @@ Evaluasi desain sistem terhadap 4 prinsip.
 
 | Prinsip | Status | Bukti / Penjelasan |
 |---------|--------|-------------------|
-| Traceability | *Contoh: ✅ — setiap modul punya label variabel* | |
-| Modularity | | |
-| Controllability | | |
-| Measurability | | |
+| Traceability | ✅ | Setiap blok kuesioner (X₁, X₂, X₃, Y) berlabel variabel spesifik dan dapat ditelusuri langsung ke hipotesis H₁, H₂, H₃ |
+| Modularity | ✅ | Setiap variabel IV diukur pada blok kuesioner yang terpisah; penambahan atau penghapusan satu blok tidak mempengaruhi blok lainnya |
+| Controllability | ✅ | Variabel kontrol (ukuran usaha) dieksternalisasi melalui stratified random sampling yang terdokumentasi, bukan hardcoded dalam instrumen |
+| Measurability | ✅ | SmartPLS 3.0 secara otomatis menghasilkan semua metrik yang dibutuhkan (path coefficient, t-value, R², AVE) tanpa intervensi manual |
 
-**Prinsip mana yang paling sulit dipenuhi?** _______________
+**Prinsip mana yang paling sulit dipenuhi?** Controllability
 **Strategi untuk mengatasinya:**
-> ___________________________________________________
-
+> Variabel kontrol (ukuran usaha) sulit dikontrol secara ketat karena bergantung pada
+> kejujuran responden dalam mengisi klasifikasi usahanya. Strategi mitigasi: verifikasi
+> silang klasifikasi usaha dengan data omzet atau jumlah karyawan yang juga ditanyakan
+> dalam kuesioner, sehingga inkonsistensi bisa dideteksi dan dikeluarkan dari sampel.
 ---
 
 ## Latihan 3 — Ablation Study Planning
@@ -130,15 +137,19 @@ Jika sistem memiliki 3 komponen utama, rencanakan ablation study.
 
 | Kondisi | Komponen A | Komponen B | Komponen C | Hasil yang Diharapkan |
 |---------|-----------|-----------|-----------|----------------------|
-| Full | *Contoh: ✅ CNN* | *Contoh: ✅ Temporal features* | *Contoh: ✅ Z-score norm* | *Baseline penuh* |
-| – A | ❌ (ganti RF) | ✅ | ✅ | |
-| – B | ✅ | ❌ (tanpa temporal) | ✅ | |
-| – C | ✅ | ✅ | ❌ (tanpa normalisasi) | |
+| Full | ✅ Literasi Digital | ✅Keterbatasan Anggaran | ✅Dukungan Infrastruktur | R² tertinggi; semua pengaruh terukur |
+| – A | ❌ (tanpa literasi digital) | ✅ | ✅ | R² menurun jika literasi digital berkontribusi signifikan |
+| – B | ✅ | ❌ (tanpa anggaran) | ✅ | R² menurun jika anggaran berkontribusi signifikan |
+| – C | ✅ | ✅ | ❌ (tanpa infrastruktur) | R² menurun jika infrastruktur berkontribusi signifikan |
 
-**Komponen mana yang diprediksi paling berkontribusi?** _____
+**Komponen mana yang diprediksi paling berkontribusi?** Komponen A — Literasi Digital (X₁)
 **Mengapa?**
-> ___________________________________________________
-
+> Berdasarkan literatur (Suwarni et al., 2019; Putri et al., 2023), literasi digital
+> secara konsisten disebut sebagai hambatan utama UMKM dalam mengadopsi dan memanfaatkan
+> teknologi. UMKM yang memiliki literasi digital rendah cenderung tidak mampu
+> memaksimalkan teknologi yang tersedia meskipun anggaran dan infrastruktur memadai.
+> Oleh karena itu, menghapus komponen ini diprediksi akan menghasilkan penurunan R²
+> paling besar dibandingkan komponen lainnya.
 ---
 
 ## Refleksi
@@ -146,5 +157,12 @@ Jika sistem memiliki 3 komponen utama, rencanakan ablation study.
 > Apa risiko jika sistem dibangun seperti produk (monolitik, fitur lengkap) lalu baru dilakukan eksperimen? Mengapa arsitektur modular penting untuk riset?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Jika sistem dibangun monolitik seperti produk, risiko utamanya adalah tidak bisa
+> mengisolasi pengaruh satu variabel dari variabel lainnya. Ketika hasil eksperimen
+> tidak sesuai harapan, peneliti tidak bisa mengetahui komponen mana yang menjadi
+> penyebabnya karena semua komponen saling terkait dan tidak bisa dilepas satu per satu.
+> Arsitektur modular penting dalam riset karena memungkinkan variable isolation —
+> peneliti bisa mengubah satu komponen (misalnya menghapus satu blok variabel) tanpa
+> mengganggu komponen lain. Ini adalah syarat dasar eksperimen yang valid dan
+> reproducible: orang lain harus bisa mereplikasi eksperimen dengan konfigurasi yang
+> sama dan mendapatkan hasil yang sama.
