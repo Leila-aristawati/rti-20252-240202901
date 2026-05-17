@@ -68,14 +68,14 @@ Ancaman validitas harus diidentifikasi **sebelum** eksperimen dan mitigasinya di
 ```
 EXPERIMENT DESIGN
 
-Research Question : Apakah literasi digital, keterbatasan anggaran, dan dukungan infrastruktur teknologi secara signifikan mempengaruhi kinerja UMKM di Kota Bandung, diukur menggunakan SEM-PLS pada 150 responden?
+Research Question : Apakah literasi digital, keterbatasan anggaran, dan dukungan infrastruktur teknologi secara signifikan mempengaruhi kinerja UMKM di Indonesia, diukur menggunakan SEM-PLS
 Hypothesis        : 
-  H₀₁: Literasi digital tidak berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung
-  H₁₁: Literasi digital berpengaruh signifikan positif terhadap kinerja UMKM di Kota Bandung
-  H₀₂: Keterbatasan anggaran tidak berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung
-  H₁₂: Keterbatasan anggaran berpengaruh signifikan negatif terhadap kinerja UMKM di Kota Bandung
-  H₀₃: Dukungan infrastruktur tidak berpengaruh signifikan terhadap kinerja UMKM di Kota Bandung
-  H₁₃: Dukungan infrastruktur berpengaruh signifikan positif terhadap kinerja UMKM di Kota Bandung
+  H₀₁: Literasi digital tidak berpengaruh signifikan terhadap kinerja UMKM di Indonesia
+  H₁₁: Literasi digital berpengaruh signifikan positif terhadap kinerja UMKM di Indonesia
+  H₀₂: Keterbatasan anggaran tidak berpengaruh signifikan terhadap kinerja UMKM di Indonesia
+  H₁₂: Keterbatasan anggaran berpengaruh signifikan negatif terhadap kinerja UMKM di Indonesia
+  H₀₃: Dukungan infrastruktur tidak berpengaruh signifikan terhadap kinerja UMKM di Indonesia
+  H₁₃: Dukungan infrastruktur berpengaruh signifikan positif terhadap kinerja UMKM di Indonesia
 Tipe Eksperimen   : [ ] Comparison  [✔] Ablation  [ ] Parameter
 
 Kondisi Eksperimen:
@@ -97,10 +97,9 @@ Threat Analysis:
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
 | Internal    | Common method bias — IV dan DV diukur dari responden yang sama (self-report)  | Menggunakan Harman's single factor test untuk mendeteksi common method bias                   |
-| External    | Sampel hanya dari Kota Bandung — hasil mungkin tidak berlaku untuk kota lain  | Menyatakan secara eksplisit batasan generalisasi; merekomendasikan replikasi di kota lain     |
+| External    | Sampel mungkin tidak merata dari seluruh wilayah Indonesia — hasil mungkin tidak merepresentasikan semua konteks  | Menyatakan secara eksplisit batasan generalisasi; merekomendasikan replikasi dengan sampel dari berbagai wilayah Indonesia     |
 | Construct   | Responden salah memahami item kuesioner — jawaban tidak mencerminkan konsep   | Pilot test kuesioner pada 10–15 responden sebelum penyebaran massal                          |
 | Conclusion  | Sampel 150 mungkin tidak cukup untuk mendeteksi efek kecil                   | Menggunakan G*Power untuk menghitung minimum sample size yang dibutuhkan sebelum pengumpulan  |
-
 Statistical Plan:
   Uji statistik    :SEM-PLS (Structural Equation Modelling - Partial Least Squares) menggunakan SmartPLS 3.0; bootstrapping 5000 iterasi untuk t-value 
   Justifikasi      : SEM-PLS sesuai untuk data ordinal (Likert), sampel relatif kecil, dan model dengan multiple IV → DV, konsisten dengan baseline
@@ -150,9 +149,9 @@ Identifikasi ancaman validitas untuk desain eksperimen ini.
 
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
-| Internal | Common method bias semua variabel (IV dan DV) diukur dari sumber yang sama (self-report kuesioner), sehingga korelasi bisa artifisial | Melakukan Harman's single factor test; memisahkan pengukuran IV dan DV dalam sesi pengisian yang berbeda jika memungkinkan |
-| External | Sampel hanya mencakup UMKM Kota Bandung, hasil tidak bisa langsung digeneralisasi ke seluruh UMKM Indonesia | Menyatakan batasan generalisasi secara eksplisit di bagian keterbatasan penelitian; merekomendasikan replikasi di kota/wilayah lain |
-| Construct | Item kuesioner mungkin tidak dipahami dengan benar oleh pelaku UMKM terutama item tentang literasi digital yang bersifat teknis | Pilot test kuesioner pada 10–15 responden UMKM sebelum penyebaran massal; revisi item yang tidak dipahami |
+| Internal | Common method bias — semua variabel (IV dan DV) diukur dari sumber yang sama (self-report kuesioner), sehingga korelasi bisa artifisial | Melakukan Harman's single factor test; memisahkan pengukuran IV dan DV dalam sesi pengisian yang berbeda jika memungkinkan |
+| External | Sampel mungkin tidak merata dari seluruh wilayah Indonesia — hasil tidak bisa langsung digeneralisasi ke semua segmen UMKM | Menyatakan batasan generalisasi secara eksplisit di bagian keterbatasan penelitian; merekomendasikan replikasi dengan sampel yang lebih merata dari berbagai wilayah Indonesia |
+| Construct | Item kuesioner mungkin tidak dipahami dengan benar oleh pelaku UMKM — terutama item tentang literasi digital yang bersifat teknis | Pilot test kuesioner pada 10–15 responden UMKM sebelum penyebaran massal; revisi item yang tidak dipahami |
 | Conclusion | Jumlah sampel 150 mungkin tidak memiliki statistical power yang cukup untuk mendeteksi efek kecil | Melakukan power analysis menggunakan G*Power sebelum pengumpulan data untuk memastikan sampel memadai |
 
 
